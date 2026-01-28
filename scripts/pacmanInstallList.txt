@@ -1,0 +1,11 @@
+polybar
+picom
+feh
+maim
+alacritty
+firefox
+rofi
+pamixer
+
+
+
