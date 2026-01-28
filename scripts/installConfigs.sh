@@ -27,15 +27,31 @@ while true; do
 
 done
 
-echo -e "starting install of ${BLUE}${themes[$((themeChoice-1))]##*/}${RESET}"
+echo "${themes[$((themeChoice-1))]##*/}" > "${DOTFILES_ROOT}/info/activeTheme.txt"
+
+echo -e "${GREEN}preparing theme install...${RESET}"
+echo "removing old assets folder..."
+rm -rf "${HOME}/.config/assets"
+
+echo -e "starting installation of ${BLUE}${themes[$((themeChoice-1))]##*/}${RESET}"
 
 THEMEDIR="${themes[$((themeChoice-1))]}"
 configs=("${themes[$((themeChoice-1))]}"/.config/*)
 
 for dir in "${configs[@]}"; do
-	echo "copying ${dir##*/}..."
+	echo -e "copying ${BLUE}${dir##*/}${RESET}..."
 	mkdir -p "${HOME}/.config/${dir##*/}"
-	cp -v "${THEMEDIR}/.config/${dir##*/}"/* "${HOME}/.config/${dir##*/}"
+	cp -rv "${THEMEDIR}/.config/${dir##*/}"/* "${HOME}/.config/${dir##*/}"
 done
+
+echo -e "${GREEN}starting configs reload${RESET}"
+
+echo -e "restarting i3..."
+i3-msg restart >/dev/null
+echo -e "reloading background image..."
+feh --bg-fill "${HOME}/.config/assets"/*.jpg
+echo -e "restarting polybar..."
+pkill polybar
+"${HOME}/.config/polybar/start.sh" >/dev/null 2>/dev/null
 
 echo -e "${GREEN}finished installing configs${RESET}"

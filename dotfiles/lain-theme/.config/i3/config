@@ -1,0 +1,131 @@
+# Lain-Dotfiles
+# i3 Config
+
+# Sets the mod key to alt
+set $mod Mod1
+
+# Executes at startup
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id polybar
+exec --no-startup-id picom
+exec --no-startup-id feh --bg-fill ~/.config/assets/lainBackground.jpg
+
+exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --rate 144 --primary
+
+# i3 settings
+
+font pango:JetBrainsMono Nerd Font Propo 9
+floating_modifier $mod
+tiling_drag modifier titlebar
+
+# Bindings
+
+# Audio binds using pamixer
+bindsym $mod+Shift+i exec --no-startup-id pamixer -t
+bindsym $mod+Shift+o exec --no-startup-id pamixer -d 10
+bindsym $mod+Shift+p exec --no-startup-id pamixer -i 10
+
+bindsym $mod+d kill
+bindsym $mod+Shift+s exec --no-startup-id maim ~/Pictures/screenshots/$(date +%s).png
+
+# Application launching
+bindsym $mod+x exec --no-startup-id alacritty
+bindsym $mod+c exec --no-startup-id firefox
+bindsym $mod+z exec --no-startup-id rofi -show drun
+
+# Movement 
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+t split h
+bindsym $mod+r split v
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+space floating toggle
+
+# Workspace binds
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+10 workspace number $ws10
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+10 move container to workspace number $ws10
+
+# reload/restart
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+# Window Settings
+
+gaps inner 3
+gaps bottom 7
+# the top gap is so big to support polybar
+gaps top 44
+gaps right 7
+gaps left 7
+
+default_border pixel 2
+
+# Colors
+
+# color vars
+set $main "#d27389"
+set $gray "#9a9a9a"
+set $black "#000000"
+set $red "#b22222"
+
+#              border backgr text indicator childBorder
+client.focused $main $black $main $main $main
+client.focused_inactive $black $black $gray $black $black
+client.unfocused $black $black $main $black $black
+client.urgent $red $black $gray $black $black
+client.placeholder $black $black $gray $black $black
+
+
+
+
+
+
+
+
+
