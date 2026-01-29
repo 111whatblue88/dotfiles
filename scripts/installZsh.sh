@@ -27,11 +27,11 @@ else
 fi
 
 if [[ -f "${DOTFILES_ROOT}/dotfiles/${ACTIVE_THEME}/.oh-my-zsh/custom/plugins/pluginsInstall.sh" ]]; then
-	echo "running ${ACTIVE_THEME} Oh-My-Zsh plugins installer..."
+	echo -e "running ${ACTIVE_THEME} Oh-My-Zsh plugins installer..."
 	"${DOTFILES_ROOT}/dotfiles/${ACTIVE_THEME}/.oh-my-zsh/custom/plugins/pluginsInstall.sh"
 fi
 
-echo "${GREEN}copying zsh-theme files${RESET}"
+echo -e "${GREEN}copying zsh-theme files${RESET}"
 for file in "${DOTFILES_ROOT}/dotfiles/${ACTIVE_THEME}/.oh-my-zsh/custom/themes"/*; do
 	echo -e "copying ${BLUE}${file##*/}${RESET}..."
 	cp -rv "${file}" "${HOME}/.oh-my-zsh/custom/themes/"

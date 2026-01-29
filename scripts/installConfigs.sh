@@ -55,7 +55,7 @@ pkill polybar
 "${HOME}/.config/polybar/start.sh" >/dev/null 2>/dev/null
 echo -e "restarting picom..."
 pkill picom
-wait 1
+sleep 0.5
 picom &
 
 echo -e "${GREEN}finished installing configs${RESET}"
