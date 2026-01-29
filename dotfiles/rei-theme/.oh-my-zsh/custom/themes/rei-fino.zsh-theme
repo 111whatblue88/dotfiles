@@ -16,10 +16,6 @@ function virtualenv_prompt_info {
   echo "${ZSH_THEME_VIRTUALENV_PREFIX:=[}${VIRTUAL_ENV:t}${ZSH_THEME_VIRTUALENV_SUFFIX:=]}"
 }
 
-function prompt_char {
-  command git branch &>/dev/null && echo "±" || echo '○'
-}
-
 function box_name {
   local box="${SHORT_HOST:-$HOST}"
   [[ -f ~/.box-name ]] && box="$(< ~/.box-name)"
@@ -31,13 +27,13 @@ local git_info='$(git_prompt_info)'
 local virtualenv_info='$(virtualenv_prompt_info)'
 local prompt_char='>'
 
-PROMPT="╭─${fg[blue]}%n ${fg[white]}at ${fg[blue]}$(box_name) ${fg[white]}in %B${fg[white]}%~%b${git_info}${ruby_env}${virtualenv_info}
-╰─${fg[blue]}${prompt_char}%{$reset_color%} "
+PROMPT=$'%F{blue}╭─[%n] %F{white}at %F{blue}[$(box_name)] %F{white}in [%B%~%b]%f%{${_git_ps}%}%{${_ruby_ps}%}%{${_venv_ps}%}\n%F{blue}╰─>%f '
+
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" ${fg[white]}on%{$reset_color%} ${fg[white]}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="${fg[red]}✘✘✘"
-ZSH_THEME_GIT_PROMPT_CLEAN="${fg[green]}✔"
+ZSH_THEME_GIT_PROMPT_DIRTY="${fg[red]}"
+ZSH_THEME_GIT_PROMPT_CLEAN="${fg[green]}"
 
 ZSH_THEME_RUBY_PROMPT_PREFIX=" ${FG[239]}using${FG[243]} ‹"
 ZSH_THEME_RUBY_PROMPT_SUFFIX="›%{$reset_color%}"
