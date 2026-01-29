@@ -1,8 +1,11 @@
 #!/bin/bash
-polybar timebar &
-polybar i3bar &
-polybar textbar &
-polybar infobar &
-polybar storagebar &
-polybar cmusbar &
 
+polybar i3bar &
+polybar storagebar &
+polybar hardwarebar &
+
+polybar cmusbar &
+polybar softwarebar & 
+
+sleep 0.5
+polybar textbar &
