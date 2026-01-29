@@ -53,5 +53,8 @@ feh --bg-fill "${HOME}/.config/assets"/*.jpg
 echo -e "restarting polybar..."
 pkill polybar
 "${HOME}/.config/polybar/start.sh" >/dev/null 2>/dev/null
+echo -e "restarting picom..."
+pkill picom
+picom &
 
 echo -e "${GREEN}finished installing configs${RESET}"
