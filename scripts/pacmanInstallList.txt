@@ -6,6 +6,9 @@ alacritty
 firefox
 rofi
 pamixer
+tmux
+zsh
+curl
 
 
 
