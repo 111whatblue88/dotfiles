@@ -4,7 +4,7 @@
 # Font settings
 [font]
 normal={family="JetBrainsMono Nerd Font Propo", style="regular"}
-size=12
+size=10
 # Window settings
 [window]
 opacity=0.9

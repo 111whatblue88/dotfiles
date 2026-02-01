@@ -161,8 +161,15 @@ tmux_conf_uninstall_plugins_on_reload=true
 # edit keybinds here
 
 unbind C-b
-set -g prefix M-b
-bind M-b send-prefix
+set -g prefix M-space
+bind M-space send-prefix
+
+bind k kill-window
+
+bind ? list-keys
+
+bind n previous-window
+bind m next-window
 
 # # /!\ do not remove the following line
 # EOF
