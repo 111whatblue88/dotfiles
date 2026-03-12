@@ -34,21 +34,20 @@ echo -e "\e[32mrunning pacman install from install list\e[0m"
 sudo pacman -S --needed - < $DOTFILES_ROOT/scripts/pacmanInstallList.txt
 
 echo -e "\e[32mrunning monitor setup script\e[0m"
-$DOTFILES_ROOT/scripts/monitor.sh
+$DOTFILES_ROOT/scripts/monitor.sh 
 
 echo -e "\e[32mrunning font copy script\e[0m"
-$DOTFILES_ROOT/scripts/installFonts.sh
+$DOTFILES_ROOT/scripts/installFonts.sh 
 
 echo -e "\e[32mrunning tmux install script\e[0m"
-$DOTFILES_ROOT/scripts/installTmux.sh
+$DOTFILES_ROOT/scripts/installTmux.sh 
 
 echo -e "\e[32mrunning zsh install script\e[0m"
-$DOTFILES_ROOT/scripts/installZsh.sh
+$DOTFILES_ROOT/scripts/installZsh.sh 
 
 echo -e "\e[32mrunning config copy script\e[0m"
-$DOTFILES_ROOT/scripts/installConfigs.sh
+$DOTFILES_ROOT/scripts/installConfigs.sh 
 
 echo -e "\e[32m\"$ACTIVE_THEME\" theme installation complete\e[0m"
 
-zsh
 

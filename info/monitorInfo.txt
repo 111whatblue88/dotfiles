@@ -63,3 +63,18 @@ eDP-1 non-primary right
 HDMI-1-0 primary
 
 eDP-1 non-primary right
+HDMI-1-0 primary
+
+eDP-1 non-primary right
+HDMI-1-0 primary
+
+eDP-1 non-primary right
+HDMI-1-0 primary
+
+eDP-1 non-primary right
+HDMI-1-0 primary
+
+eDP-1 non-primary right
+HDMI-1-0 primary
+
+eDP-1 non-primary right
