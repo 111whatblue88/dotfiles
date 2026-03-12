@@ -1,0 +1,44 @@
+# Lain-Dotfiles
+# Alacritty config
+
+# Font settings
+[font]
+normal={family="JetBrainsMono Nerd Font Propo", style="regular"}
+size=10
+# Window settings
+[window]
+opacity=0.9
+# Color Settings
+[colors]
+[colors.primary]
+foreground="#d27389" 
+background="#000000"
+[colors.normal]
+red="#90201f"
+white="#eda2a9"
+blue="#87ceeb"
+magenta="#d27389"
+
+green="#7AFF96"
+yellow="#ECFF85"
+# Bindings
+[keyboard]
+bindings=[
+
+    {key="-", mods="Alt", action="DecreaseFontSize"},
+    {key="=", mods="Alt", action="IncreaseFontSize"}
+
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
