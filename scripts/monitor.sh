@@ -19,7 +19,7 @@ done
 while true; do
 	count=0
 	themes=()
-	for monitor in $monitors; do
+	for monitor in ${monitors[@]}; do
 		((count++))
 		themes+=("$i")
 		echo -e "[#${BLUE}${count}${RESET}]: ${monitor}"
@@ -35,7 +35,7 @@ done
 
 mainMonitor=${monitors[$monitorChoice-1]}
 
-for monitor in $monitors; do
+for monitor in ${monitors[@]}; do
 
   if [ $monitor = $mainMonitor ]; then
     continue
@@ -49,23 +49,25 @@ for monitor in $monitors; do
 
     read -p "choose an option(1-$count): " placementChoice
     if [[ "$monitorChoice" -gt 0 && "$monitorChoice" -le 3 ]]; then
+      case "$placementChoice" in 
+        1)
+          xrandr --output $mainMonitor --mode 1920x1080 --output $monitor --mode 1920x1080 --left-of $mainMonitor
+          ;;
+
+        2)
+          xrandr --output $mainMonitor --mode 1920x1080 --output $monitor --mode 1920x1080 --right-of $mainMonitor
+          ;;
+
+        3)
+          ;;
+      esac
       break
+
+          echo "${themes[$((themeChoice-1))]##*/}" > "${DOTFILES_ROOT}/info/activeTheme.txt"
+
     else
       echo -e "${RED}invalid${RESET} choice, please pick a number between 1 and 3"
     fi
-
-    case $placementChoice in 
-      "1")
-        xrandr --output $monitorChoice --mode 1920x1080 --output $monitor --mode 1920x1080 --left-of $monitorChoice
-        ;;
-
-      "2")
-        xrandr --output $monitorChoice --mode 1920x1080 --output $monitor --mode 1920x1080 --right-of $monitorChoice
-        ;;
-
-      "3")
-        ;;
-    esac
 
   done
 

@@ -47,3 +47,5 @@ $DOTFILES_ROOT/scripts/installConfigs.sh
 
 echo -e "\e[32m\"$ACTIVE_THEME\" theme installation complete\e[0m"
 
+zsh
+

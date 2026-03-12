@@ -9,6 +9,6 @@ pamixer
 tmux
 zsh
 curl
-
+xorg-xrandr
 
 
