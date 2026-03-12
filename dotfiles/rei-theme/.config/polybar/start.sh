@@ -1,5 +1,10 @@
 #!/bin/bash
 
+oldInstances=$(pgrep polybar)
+for instance in ${oldInstances[@]}; do 
+  kill $instance
+done
+
 polybarInitPrimary () {
 
   MONITOR=$1 polybar cmusbar &
@@ -11,7 +16,7 @@ polybarInitPrimary () {
   MONITOR=$1 polybar textbar &
 }
 polybarInitMinimal () {
-  polybar textbar $1 &
+  MONITOR=$1 polybar textbar &
 }
 
 numMonitors=$(polybar -m | wc -l | awk '{print $1}')
@@ -26,7 +31,8 @@ primaryMonitor=$(xrandr | grep -w primary | awk '{print $1}')
 
 for monitor in ${monitors[@]}; do
 
-  if [[ $monitor = primaryMonitor ]]; then 
+  if [[ $monitor = $primaryMonitor ]]; then 
+    polybarInitPrimary $monitor
     continue 
   fi
 

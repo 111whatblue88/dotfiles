@@ -33,6 +33,9 @@ echo -e "\e[32m\"$ACTIVE_THEME\" chosen, starting dotfile copy\e[0m"
 echo -e "\e[32mrunning pacman install from install list\e[0m"
 sudo pacman -S --needed - < $DOTFILES_ROOT/scripts/pacmanInstallList.txt
 
+echo -e "\e[32mrunning monitor setup script\e[0m"
+$DOTFILES_ROOT/scripts/monitor.sh
+
 echo -e "\e[32mrunning font copy script\e[0m"
 $DOTFILES_ROOT/scripts/installFonts.sh
 

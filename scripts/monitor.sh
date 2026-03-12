@@ -25,7 +25,7 @@ while true; do
 		echo -e "[#${BLUE}${count}${RESET}]: ${monitor}"
 	done
 
-	read -p "choose a main monitor(1-$count): " monitorChoice
+	read -p "choose a primary monitor(1-$count): " monitorChoice
 	if [[ "$monitorChoice" -gt 0 && "$monitorChoice" -le "$count" ]]; then
 		break
 	else
@@ -34,6 +34,8 @@ while true; do
 done
 
 mainMonitor=${monitors[$monitorChoice-1]}
+echo "$mainMonitor primary" >> "$DOTFILES_ROOT/info/monitorInfo.txt"
+echo >> "$DOTFILES_ROOT/info/monitorInfo.txt"
 
 for monitor in ${monitors[@]}; do
 
@@ -51,14 +53,17 @@ for monitor in ${monitors[@]}; do
     if [[ "$monitorChoice" -gt 0 && "$monitorChoice" -le 3 ]]; then
       case "$placementChoice" in 
         1)
-          xrandr --output $mainMonitor --mode 1920x1080 --output $monitor --mode 1920x1080 --left-of $mainMonitor
+          echo "$monitor non-primary left" >> "$DOTFILES_ROOT/info/monitorInfo.txt"
+          xrandr --output $monitor --mode 1920x1080 --rate 144 --left-of $mainMonitor
           ;;
 
         2)
-          xrandr --output $mainMonitor --mode 1920x1080 --output $monitor --mode 1920x1080 --right-of $mainMonitor
+          echo "$monitor non-primary right" >> "$DOTFILES_ROOT/info/monitorInfo.txt"
+          xrandr --output $monitor --mode 1920x1080 --rate 144 --right-of $mainMonitor
           ;;
 
         3)
+          echo "$monitor non-primary non" >> "$DOTFILES_ROOT/info/monitorInfo.txt"
           ;;
       esac
       break
@@ -72,6 +77,8 @@ for monitor in ${monitors[@]}; do
   done
 
 done
+
+xrandr --output $mainMonitor --mode 1920x1080 --rate 144 --primary
 
 
 

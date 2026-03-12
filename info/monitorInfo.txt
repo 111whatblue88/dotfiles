@@ -1,0 +1,65 @@
+eDP-1 primary
+
+HDMI-1-0 non-primary left
+eDP-1 primary
+
+HDMI-1-0 primary
+
+eDP-1 non-primary left
+HDMI-1-0 primary
+
+eDP-1 non-primary left
+HDMI-1-0 primary
+
+eDP-1 non-primary non
+HDMI-1-0 primary
+
+eDP-1 non-primary non
+HDMI-1-0 primary
+
+eDP-1 non-primary non
+HDMI-1-0 primary
+
+eDP-1 non-primary non
+eDP-1 primary
+
+HDMI-1-0 non-primary non
+HDMI-1-0 primary
+
+eDP-1 non-primary non
+HDMI-1-0 primary
+
+eDP-1 non-primary non
+HDMI-1-0 primary
+
+eDP-1 non-primary left
+HDMI-1-0 primary
+
+eDP-1 non-primary non
+HDMI-1-0 primary
+
+eDP-1 non-primary non
+eDP-1 primary
+
+HDMI-1-0 non-primary left
+eDP-1 primary
+
+HDMI-1-0 non-primary left
+HDMI-1-0 primary
+
+eDP-1 non-primary right
+HDMI-1-0 primary
+
+eDP-1 non-primary right
+HDMI-1-0 primary
+
+eDP-1 non-primary right
+HDMI-1-0 primary
+
+eDP-1 non-primary right
+HDMI-1-0 primary
+
+eDP-1 non-primary right
+HDMI-1-0 primary
+
+eDP-1 non-primary right
