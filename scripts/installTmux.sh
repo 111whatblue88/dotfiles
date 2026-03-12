@@ -11,14 +11,10 @@ ACTIVE_THEME="$(cat ${DOTFILES_ROOT}/info/activeTheme.txt)"
 echo -e "${GREEN}starting tmux installation${RESET}"
 
 echo "installing oh-my-tmux..."
-curl -fsSL "https://github.com/gpakosz/.tmux/raw/refs/heads/master/install.sh#$(date +%s)" | bash
-
-if [[ -d ${HOME}/.config/tmux ]]; then
-  echo ""
+if [[ -d "${HOME}/.local/share/tmux/oh-my-tmux" ]]; then
+  echo -e "oh-my-tmux already installed, ${RED}skipping${RESET}"
 else
-  echo -e "${RED}tmux config folder not found, maybe oh-my-tmux did not install correctly?${RESET}"
-  echo -e "${RED}ending tmux installation...${RESET}"
-  return -1
+  curl -fsSL "https://github.com/gpakosz/.tmux/raw/refs/heads/master/install.sh#$(date +%s)" | bash
 fi
 
 echo "copying config..."

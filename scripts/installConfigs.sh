@@ -9,34 +9,16 @@ DOTFILES_ROOT="$(git rev-parse --show-toplevel 2>/dev/null)"
 
 echo -e "${GREEN}starting configs installation${RESET}"
 
-while true; do
-	count=0
-	themes=()
-	for i in "${DOTFILES_ROOT}/dotfiles"/*; do
-		((count++))
-		themes+=("$i")
-		echo -e "[#${BLUE}${count}${RESET}]: ${i##*/}"
-	done
-
-	read -p "choose a theme(1-$count): " themeChoice
-	if [[ "$themeChoice" -gt 0 && "$themeChoice" -le "$count" ]]; then
-		break
-	else
-		echo -e "${RED}invalid${RESET} choice, please pick a number between 1 and $count"
-	fi
-
-done
-
-echo "${themes[$((themeChoice-1))]##*/}" > "${DOTFILES_ROOT}/info/activeTheme.txt"
+ACTIVE_THEME="$(cat ${DOTFILES_ROOT}/info/activeTheme.txt)"
 
 echo -e "${GREEN}preparing theme install...${RESET}"
 echo "removing old assets folder..."
 rm -rf "${HOME}/.config/assets"
 
-echo -e "starting installation of ${BLUE}${themes[$((themeChoice-1))]##*/}${RESET}"
+echo -e "starting installation of ${BLUE}$ACTIVE_THEME${RESET}"
 
-THEMEDIR="${themes[$((themeChoice-1))]}"
-configs=("${themes[$((themeChoice-1))]}"/.config/*)
+THEMEDIR="$DOTFILES_ROOT/dotfiles/$ACTIVE_THEME"
+configs=("${THEMEDIR}"/.config/*)
 
 for dir in "${configs[@]}"; do
 	echo -e "copying ${BLUE}${dir##*/}${RESET}..."

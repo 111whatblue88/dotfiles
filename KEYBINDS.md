@@ -45,3 +45,16 @@ alt+= = increase font
 #NeoVim
 
 #Tmux
+
+alt+space = prefix combo
+
+prefix-alt+k = kill window
+prefix-? = list bindings
+
+
+prefix-alt+n = previous window
+prefix-atl+m = next window
+
+
+
+
