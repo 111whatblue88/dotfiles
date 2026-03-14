@@ -33,8 +33,12 @@ echo -e "\e[32m\"$ACTIVE_THEME\" chosen, starting dotfile copy\e[0m"
 echo -e "\e[32mrunning pacman install from install list\e[0m"
 sudo pacman -S --needed - < $DOTFILES_ROOT/scripts/pacmanInstallList.txt
 
-echo -e "\e[32mrunning monitor setup script\e[0m"
-$DOTFILES_ROOT/scripts/monitor.sh
+read -p "do you want to configure monitor layout?(Y/N)" monitorYNRaw
+monitorYN=$(echo "$monitorYNRaw" | tr '[:upper:]' '[:lower:]')
+if [ $monitorYN = "y" ] || [ $monitorYN = "yes" ]; then 
+  echo -e "\e[32mrunning monitor setup script\e[0m"
+  $DOTFILES_ROOT/scripts/monitor.sh
+fi
 
 echo -e "\e[32mrunning font copy script\e[0m"
 $DOTFILES_ROOT/scripts/installFonts.sh
@@ -48,7 +52,14 @@ $DOTFILES_ROOT/scripts/installZsh.sh
 echo -e "\e[32mrunning config copy script\e[0m"
 $DOTFILES_ROOT/scripts/installConfigs.sh
 
+if [ $monitorYN = "y" ] || [ $monitorYN = "yes" ]; then 
+  echo -e "adding monitor script start line to i3 config to run at startup"
+
+  echo " " >> "$HOME/.config/i3/config"
+  echo "# this was added automatically by the rei-dotfiles installer" >> "$HOME/.config/i3/config"
+  echo "exec --no-startup-id $HOME/monitorSetup.sh" >> "$HOME/.config/i3/config"
+fi
+
 echo -e "\e[32m\"$ACTIVE_THEME\" theme installation complete\e[0m"
 
-zsh
 

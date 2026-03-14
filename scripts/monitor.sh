@@ -37,49 +37,67 @@ mainMonitor=${monitors[$monitorChoice-1]}
 echo "$mainMonitor primary" >> "$DOTFILES_ROOT/info/monitorInfo.txt"
 echo >> "$DOTFILES_ROOT/info/monitorInfo.txt"
 
+# set up xrandr monitor script
+setupFile="$HOME/monitorStartup.sh"
+echo -e "${GREEN}creating monitor startup script${RESET}"
+echo "#!/bin/bash" > "$setupFile"
+chmod +x "$setupFile"
+echo  "xrandr --output $mainMonitor --mode 1920x1080 --rate 1000 --primary" >> $setupFile
+
+echo -e "${BLUE}created $setupFile$RESET"
+
+# setup monitor layout
+
 for monitor in ${monitors[@]}; do
 
   if [ $monitor = $mainMonitor ]; then
     continue
   fi
 
-  while true; do 
-    echo -e "Where should this monitor go in relation to $mainMonitor?: $monitor"
-    echo -e "[#1]: Left"
-    echo -e "[#2]: Right"
-    echo -e "[#3]: Do not use"
+	count=0
+	themes=()
+	for monitor in ${monitors[@]}; do
+		((count++))
+		echo -e "[#${BLUE}${count}${RESET}]: ${monitor}"
+	done
 
-    read -p "choose an option(1-$count): " placementChoice
-    if [[ "$monitorChoice" -gt 0 && "$monitorChoice" -le 3 ]]; then
-      case "$placementChoice" in 
-        1)
-          echo "$monitor non-primary left" >> "$DOTFILES_ROOT/info/monitorInfo.txt"
-          xrandr --output $monitor --mode 1920x1080 --rate 144 --left-of $mainMonitor
-          ;;
+	read -p "which monitor to relate placement to?(1-$count): " monitorChoice
+	if [[ "$monitorChoice" -gt 0 && "$monitorChoice" -le "$count" ]]; then
+		break
+	else
+		echo -e "${RED}invalid${RESET} choice, please pick a number between 1 and $count"
+	fi
 
-        2)
-          echo "$monitor non-primary right" >> "$DOTFILES_ROOT/info/monitorInfo.txt"
-          xrandr --output $monitor --mode 1920x1080 --rate 144 --right-of $mainMonitor
-          ;;
+  echo "[#1]: left"
+  echo "[#2]: right"
+  echo "[#3]: up"
+  echo "[#4]: down"
+  echo "[#5]: do not use"
 
-        3)
-          echo "$monitor non-primary non" >> "$DOTFILES_ROOT/info/monitorInfo.txt"
-          ;;
-      esac
-      break
+  read -p "where to put $monitor in relation to $monitorChoice?(1-5): " monitorPlacement
 
-          echo "${themes[$((themeChoice-1))]##*/}" > "${DOTFILES_ROOT}/info/activeTheme.txt"
+  case "$monitorPlacement" in
 
-    else
-      echo -e "${RED}invalid${RESET} choice, please pick a number between 1 and 3"
-    fi
-
-  done
+    "1") 
+      echo "xrandr --output $monitor --mode 1920x1080 --rate 1000 --left-of $monitorChoice" >> $setupFile
+    ;;
+    "2") 
+      echo "xrandr --output $monitor --mode 1920x1080 --rate 1000 --right-of $monitorChoice" >> $setupFile
+    ;;
+    "3") 
+      echo "xrandr --output $monitor --mode 1920x1080 --rate 1000 --above $monitorChoice" >> $setupFile
+    ;;
+    "4")
+      echo "xrandr --output $monitor --mode 1920x1080 --rate 1000 --below $monitorChoice" >> $setupFile
+    ;;
+    "5") 
+      continue
+    ;;
+  esac
 
 done
 
-xrandr --output $mainMonitor --mode 1920x1080 --rate 144 --primary
-
+echo -e "${GREEN}monitor setup complete$RESET"
 
 
 
