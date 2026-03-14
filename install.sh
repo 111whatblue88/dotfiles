@@ -57,7 +57,8 @@ if [ $monitorYN = "y" ] || [ $monitorYN = "yes" ]; then
 
   echo " " >> "$HOME/.config/i3/config"
   echo "# this was added automatically by the rei-dotfiles installer" >> "$HOME/.config/i3/config"
-  echo "exec --no-startup-id $HOME/monitorSetup.sh" >> "$HOME/.config/i3/config"
+  echo "# sets refresh rate to really high number, as xrandr lowers it to the nearest supported, stupid way ik hehehe" >> "$HOME/.config/i3/config"
+  echo "exec --no-startup-id $HOME/monitorStartup.sh" >> "$HOME/.config/i3/config"
 fi
 
 echo -e "\e[32m\"$ACTIVE_THEME\" theme installation complete\e[0m"

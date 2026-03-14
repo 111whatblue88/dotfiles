@@ -10,8 +10,6 @@ exec --no-startup-id ~/.config/polybar/start.sh
 exec --no-startup-id picom
 exec --no-startup-id feh --bg-fill ~/.config/assets/reiBackground.jpg
 
-exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --rate 144 --primary
-
 # i3 settings
 
 font pango:JetBrainsMono Nerd Font Propo 9
