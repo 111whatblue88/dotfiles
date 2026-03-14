@@ -111,3 +111,11 @@ eDP-1 primary
 
 eDP-1 primary
 
+HDMI-1-0 primary
+
+HDMI-1-0 primary
+
+HDMI-1-0 primary
+
+HDMI-1-0 primary
+
