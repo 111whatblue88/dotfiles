@@ -33,24 +33,29 @@ echo -e "\e[32m\"$ACTIVE_THEME\" chosen, starting dotfile copy\e[0m"
 echo -e "\e[32mrunning pacman install from install list\e[0m"
 sudo pacman -S --needed - < $DOTFILES_ROOT/scripts/pacmanInstallList.txt
 
+<<<<<<< HEAD
 read -p "do you want to configure monitor layout?(Y/N)" monitorYNRaw
 monitorYN=$(echo "$monitorYNRaw" | tr '[:upper:]' '[:lower:]')
 if [ $monitorYN = "y" ] || [ $monitorYN = "yes" ]; then 
   echo -e "\e[32mrunning monitor setup script\e[0m"
   $DOTFILES_ROOT/scripts/monitor.sh
 fi
+=======
+echo -e "\e[32mrunning monitor setup script\e[0m"
+$DOTFILES_ROOT/scripts/monitor.sh 
+>>>>>>> 556ce7bc3d9db7ba08217435eef6c59eb2ff59d8
 
 echo -e "\e[32mrunning font copy script\e[0m"
-$DOTFILES_ROOT/scripts/installFonts.sh
+$DOTFILES_ROOT/scripts/installFonts.sh 
 
 echo -e "\e[32mrunning tmux install script\e[0m"
-$DOTFILES_ROOT/scripts/installTmux.sh
+$DOTFILES_ROOT/scripts/installTmux.sh 
 
 echo -e "\e[32mrunning zsh install script\e[0m"
-$DOTFILES_ROOT/scripts/installZsh.sh
+$DOTFILES_ROOT/scripts/installZsh.sh 
 
 echo -e "\e[32mrunning config copy script\e[0m"
-$DOTFILES_ROOT/scripts/installConfigs.sh
+$DOTFILES_ROOT/scripts/installConfigs.sh 
 
 if [ $monitorYN = "y" ] || [ $monitorYN = "yes" ]; then 
   echo -e "adding monitor script start line to i3 config to run at startup"
