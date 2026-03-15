@@ -56,7 +56,7 @@ if [ $monitorYN = "y" ] || [ $monitorYN = "yes" ]; then
   echo -e "adding monitor script start line to i3 config to run at startup"
 
   echo " " >> "$HOME/.config/i3/config"
-  echo "# this was added automatically by the rei-dotfiles installer" >> "$HOME/.config/i3/config"
+  echo "# this was added automatically by elo's dotfiles installer" >> "$HOME/.config/i3/config"
   echo "# sets refresh rate to really high number, as xrandr lowers it to the nearest supported, stupid way ik hehehe" >> "$HOME/.config/i3/config"
   echo "exec --no-startup-id $HOME/monitorStartup.sh" >> "$HOME/.config/i3/config"
 fi

@@ -42,6 +42,10 @@ setupFile="$HOME/monitorStartup.sh"
 echo -e "${GREEN}creating monitor startup script${RESET}"
 echo "#!/bin/bash" > "$setupFile"
 chmod +x "$setupFile"
+
+echo "# this was added automatically by the elo's dotfiles installer" >> $setupFile
+echo "# sets refresh rate to really high number, as xrandr lowers it to the nearest supported, stupid way ik hehehe" >> $setupFile
+
 echo  "xrandr --output $mainMonitor --mode 1920x1080 --rate 1000 --primary" >> $setupFile
 
 echo -e "${BLUE}created $setupFile$RESET"
