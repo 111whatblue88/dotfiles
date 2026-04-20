@@ -8,7 +8,9 @@ set $mod Mod1
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id ~/.config/polybar/start.sh
 exec --no-startup-id picom
-exec --no-startup-id feh --bg-fill ~/.config/assets/main.jpg 
+exec --no-startup-id feh --bg-fill ~/.config/assets/reiBackground.jpg
+
+exec --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --rate 144 --primary
 
 # i3 settings
 
@@ -115,8 +117,8 @@ set $red "#90201f"
 set $blue "#87ceeb"
 
 #              border backgr text indicator childBorder
-client.focused $blue $black $blue $white $red
+client.focused $black $black $blue $white $red
 client.focused_inactive $black $black $gray $black $black
-client.unfocused $red $black $red $black $black
+client.unfocused $black $black $white $black $black
 client.urgent $red $black $gray $black $black
 client.placeholder $black $black $gray $black $black

@@ -108,15 +108,14 @@ default_border pixel 3
 # Colors
 
 # color vars
-set $white "#ffebec"
-set $gray "#9a9a9a"
-set $black "#000000"
-set $red "#90201f"
-set $blue "#87ceeb"
+set $white "#fdfdfd"
+set $gray "#c6c2c7"
+set $black "#382c3a"
+set $darkGray "#6c636e"
 
 #              border backgr text indicator childBorder
-client.focused $blue $black $blue $white $red
+client.focused $white $black $white $white $darkGray
 client.focused_inactive $black $black $gray $black $black
-client.unfocused $red $black $red $black $black
+client.unfocused $darkGray $black $gray $black $black
 client.urgent $red $black $gray $black $black
 client.placeholder $black $black $gray $black $black

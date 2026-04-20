@@ -31,7 +31,8 @@ echo -e "${GREEN}starting configs reload${RESET}"
 echo -e "restarting i3..."
 i3-msg restart >/dev/null
 echo -e "reloading background image..."
-feh --bg-fill "${HOME}/.config/assets"/*.jpg
+rm ~/.fehbg
+feh --bg-fill "${HOME}/.config/assets"/background.* "${HOME}/.config/assets"/other.*
 echo -e "restarting polybar..."
 pkill polybar
 "${HOME}/.config/polybar/start.sh" >/dev/null 2>/dev/null

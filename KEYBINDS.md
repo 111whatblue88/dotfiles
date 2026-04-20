@@ -48,12 +48,15 @@ alt+= = increase font
 
 alt+space = prefix combo
 
-prefix-alt+k = kill window
-prefix-? = list bindings
+prefix+k = kill window
+prefix+? = list bindings
 
+prefix+w = list windows
 
-prefix-alt+n = previous window
-prefix-atl+m = next window
+prefix+c = list windows
+
+prefix+n = previous window
+prefix+m = next window
 
 
 

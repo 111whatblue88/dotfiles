@@ -1,0 +1,44 @@
+# Misaki-Dotfiles
+# Alacritty config
+
+# Font settings
+[font]
+normal={family="JetBrainsMono Nerd Font Propo", style="regular"}
+size=9
+# Window settings
+[window]
+opacity=0.91
+# Color Settings
+[colors]
+[colors.primary]
+foreground="#fdfdfd" 
+background="#382c3a"
+[colors.normal]
+red="#90201f"
+white="#ffebec"
+blue="#87ceeb"
+magenta="#d27389"
+
+green="#7AFF96"
+yellow="#ECFF85"
+# Bindings
+[keyboard]
+bindings=[
+
+    {key="-", mods="Alt", action="DecreaseFontSize"},
+    {key="=", mods="Alt", action="IncreaseFontSize"}
+
+]
+
+
+
+
+
+
+
+
+
+
+
+
+

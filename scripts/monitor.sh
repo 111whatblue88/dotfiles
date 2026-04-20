@@ -67,10 +67,12 @@ for monitor in ${monitors[@]}; do
 
 	read -p "which monitor to relate placement to?(1-$count): " monitorChoice
 	if [[ "$monitorChoice" -gt 0 && "$monitorChoice" -le "$count" ]]; then
-		break
+		command
 	else
 		echo -e "${RED}invalid${RESET} choice, please pick a number between 1 and $count"
 	fi
+
+  monitorCurrent=${monitors[monitorChoice-1]}
 
   echo "[#1]: left"
   echo "[#2]: right"
@@ -83,16 +85,16 @@ for monitor in ${monitors[@]}; do
   case "$monitorPlacement" in
 
     "1") 
-      echo "xrandr --output $monitor --mode 1920x1080 --rate 1000 --left-of $monitorChoice" >> $setupFile
+      echo "xrandr --output $monitorCurrent --mode 1920x1080 --rate 1000 --left-of $monitor" >> $setupFile
     ;;
     "2") 
-      echo "xrandr --output $monitor --mode 1920x1080 --rate 1000 --right-of $monitorChoice" >> $setupFile
+      echo "xrandr --output $monitorCurrent --mode 1920x1080 --rate 1000 --right-of $monitor" >> $setupFile
     ;;
     "3") 
-      echo "xrandr --output $monitor --mode 1920x1080 --rate 1000 --above $monitorChoice" >> $setupFile
+      echo "xrandr --output $monitorCurrent --mode 1920x1080 --rate 1000 --above $monitor" >> $setupFile
     ;;
     "4")
-      echo "xrandr --output $monitor --mode 1920x1080 --rate 1000 --below $monitorChoice" >> $setupFile
+      echo "xrandr --output $monitorCurrent --mode 1920x1080 --rate 1000 --below $monitor" >> $setupFile
     ;;
     "5") 
       continue

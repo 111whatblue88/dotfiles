@@ -42,22 +42,10 @@ updateInfo () {
 while true; do
 
 	updateInfo
-
-  end=${#info_string}
-  echo $info_string
-  echo $end
-  if [[ end -lt 40 ]]; then
-    echo "$info_string"
-    continue
-  fi
-
-  echo "fkldsfk"
-
 	text="$info_string"
 	info_string="$info_string $info_string"
 	end=${#text}
 	text="$info_string"
-
 
 	for (( i = 0; i < "${#text}"; i++ )); do
 		if [[ $i -eq ${end} ]]; then
