@@ -48,6 +48,9 @@ alt+= = increase font
 
 alt+space = prefix combo
 
+prefix+x new session
+prefix+c new window 
+
 prefix+k = kill window
 prefix+? = list bindings
 
