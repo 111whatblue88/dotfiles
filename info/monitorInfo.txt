@@ -119,3 +119,5 @@ HDMI-1-0 primary
 
 HDMI-1-0 primary
 
+eDP-1 primary
+
