@@ -8,7 +8,7 @@ set $mod Mod1
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id ~/.config/polybar/start.sh
 exec --no-startup-id picom
-exec --no-startup-id feh --bg-fill ~/.config/assets/main.jpg 
+exec --no-startup-id feh --bg-fill ~/.config/assets/background.png
 exec --no-startup-id xss-lock -- i3lock --nofork -i ~/.config/assets/background.png
 
 # i3 settings

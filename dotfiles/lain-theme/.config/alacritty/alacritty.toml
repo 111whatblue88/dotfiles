@@ -3,8 +3,8 @@
 
 # Font settings
 [font]
-normal={family="JetBrainsMono Nerd Font Propo", style="regular"}
-size=10
+normal={family="White Rabbit", style="regular"}
+size=12
 # Window settings
 [window]
 opacity=0.9
