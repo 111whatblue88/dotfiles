@@ -46,12 +46,12 @@ while true; do
   end=${#info_string}
   echo $info_string
   echo $end
-  if [[ end -lt 40 ]]; then
-    echo "$info_string"
+  if [[ end -lt 30 ]]; then
+    echo "[$info_string]"
+    sleep 0.1
     continue
   fi
 
-  echo "fkldsfk"
 
 	text="$info_string"
 	info_string="$info_string $info_string"
@@ -63,8 +63,8 @@ while true; do
 		if [[ $i -eq ${end} ]]; then
 			i=0
 		fi
-		echo "${text:$i:${end}}"
-		sleep 0.4
+		echo "[${text:$i:30}]"
+		sleep 0.1
 		updateInfo
 		info_string="$info_string $info_string"
 		if [[ $info_string != $text ]]; then

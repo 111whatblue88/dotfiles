@@ -97,12 +97,12 @@ bindsym $mod+Shift+r restart
 
 # Window Settings
 
-gaps inner 3
+#gaps inner 3
 gaps bottom 7
 # the top gap is so big to support polybar
-gaps top 44
-gaps right 7
-gaps left 7
+gaps top 48
+gaps right 10
+gaps left 10
 
 default_border pixel 2
 

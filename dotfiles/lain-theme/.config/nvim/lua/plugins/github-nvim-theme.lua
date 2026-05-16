@@ -1,5 +1,5 @@
 return {
 
-  { "https://github.com/zaki/zazen" },
+  { "https://github.com/vague-theme/vague.nvim" },
 
 }

@@ -1,6 +1,7 @@
 
 
 export ZSH="$HOME/.oh-my-zsh"
+export EDITOR=nvim
 
 ZSH_THEME="lain-fino"
 
@@ -9,11 +10,7 @@ plugins=(
 	zsh-autosuggestions
 )
 
-bindkey '^[g' 'forward-char'
-
-
-
-
-
 source $ZSH/oh-my-zsh.sh
+
+bindkey '^[g' 'forward-char'
 

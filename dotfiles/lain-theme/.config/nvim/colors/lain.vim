@@ -30,17 +30,20 @@ let s:light_gray   = { "gui": "#a9a9a9", "cterm": "241" }
 let s:red = { "gui": "#90201f", "cterm": "246" }
 let s:yellow = { "gui": "#BBBBBB", "cterm": "249" }
 
+let s:blue = { "gui": "#87ceeb", "cterm": "246" }
+let s:green = { "gui": "#7AFF96", "cterm": "249" }
+
 " Assign to semantic categories based on background color
   " Dark theme
   let s:bg         = s:black
   let s:norm       = s:pink
   let s:comment    = s:gray
-  let s:dimmed     = s:light_gray
-  let s:subtle     = s:light_gray
-  let s:faint      = s:light_gray
-  let s:accent1    = s:light_pink
+  let s:dimmed     = s:gray
+  let s:subtle     = s:gray
+  let s:faint      = s:gray
+  let s:accent1    = s:gray
   let s:accent2    = s:light_pink
-  let s:accent3    = s:light_pink
+  let s:accent3    = s:blue
   let s:accent4    = s:light_pink
   let s:normRed    = s:red
   let s:normGreen  = s:pink
@@ -68,10 +71,14 @@ endfunction
 if version >= 700
   call s:h("CursorLine",  { "bg": s:faint })
   call s:h("MatchParen",  { "fg": s:accent1, "bg": s:faint, "gui": "bold" })
-  call s:h("Pmenu",       { "bg": s:faint })
-  call s:h("PmenuThumb",  { "bg": s:norm })
-  call s:h("PmenuSBar",   { "bg": s:subtle })
-  call s:h("PmenuSel",    { "bg": s:faintBlue })
+
+  call s:h("Pmenu",       { "fg": s:black,"bg": s:gray })
+  call s:h("PmenuThumb",  { "fg": s:black,"bg": s:gray })
+  call s:h("PmenuSBar",   { "fg": s:black,"bg": s:gray })
+  call s:h("PmenuSel",    { "fg": s:black,"bg": s:pink })
+
+
+
   call s:h("ColorColumn", { "bg": s:faintRed })
   call s:h("SpellBad",    { "sp": s:normRed, "gui": "undercurl" })
   call s:h("SpellCap",    { "sp": s:accent1, "gui": "undercurl" })
@@ -85,6 +92,7 @@ if version >= 700
   execute "hi! SpellRare  ctermbg=" s:faintGreen.cterm
   execute "hi! SpellLocal ctermbg=" s:faint.cterm
 endif
+
 
 "}}}
 " Highlights - UI ------------------------------------------{{{

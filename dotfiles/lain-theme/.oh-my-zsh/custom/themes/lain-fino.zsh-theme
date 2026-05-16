@@ -27,7 +27,7 @@ local git_info='$(git_prompt_info)'
 local virtualenv_info='$(virtualenv_prompt_info)'
 local prompt_char='>'
 
-PROMPT=$'%F{white}╭─[%n] %F{white}at %F{white}[$(box_name)] %F{white}in [%B%~%b]%f%{${_git_ps}%}%{${_ruby_ps}%}%{${_venv_ps}%}\n%F{white}╰─>%f '
+PROMPT=$'%F{white}╭─[%n] %F{white}at %F{blue}[$(box_name)] %F{white}in [%B%~%b]%f%{${_git_ps}%}%{${_ruby_ps}%}%{${_venv_ps}%}\n%F{white}╰─>%f '
 
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" ${fg[white]}on%{$reset_color%} ${fg[white]}"
