@@ -92,6 +92,7 @@ bindsym $mod+Shift+10 move container to workspace number $ws10
 
 # reload/restart
 
+bindsym $mod+Shift+q exit
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
