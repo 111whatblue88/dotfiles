@@ -1,18 +1,5 @@
-# dotfiles
-
-TODO:
-
-tmux
-nvim
-rofi
-gtk
-firefoxcss
-grub
-plymouth
-sddm
-
-
-
+# info 
+i do not maintain this in the slightest anymore
 
 
 

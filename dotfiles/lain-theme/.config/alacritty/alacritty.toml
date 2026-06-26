@@ -3,11 +3,11 @@
 
 # Font settings
 [font]
-normal={family="White Rabbit", style="regular"}
-size=12
+normal={family="JetBrainsMono Nerd Font Mono", style="regular"}
+size=11
 # Window settings
 [window]
-opacity=0.9
+opacity=0.85
 # Color Settings
 [colors]
 [colors.primary]
