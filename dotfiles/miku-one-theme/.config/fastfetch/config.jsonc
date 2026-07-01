@@ -1,0 +1,174 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+    "logo": {
+        "type": "file",
+        "source": "~/.config/assets/NHK.txt",
+        "width": 10,
+        "height": 10,
+        "padding": {
+            "top": 0,
+            "left": 4,
+            "right": 0
+        },
+        "color": {
+            "1": "white",
+        }
+    },
+
+    "display": {
+        "separator": "",     
+        "color": {
+            "keys": "magenta",    
+            "title": "magenta"     
+        },
+        "key": {
+            "width": 12,       
+            "type": "string"
+        },
+        "bar": {
+            "width": 10,       
+            "char": {
+                "elapsed": "■", 
+                "total": "-"
+            }
+        },
+        "percent": {
+            "type": 9,      
+            "color": {
+				
+            }
+        }
+    },
+
+    "modules": [
+
+    //─│╰╯╮╭
+    //╞
+    
+    {
+        "type": "custom",
+        "format": "╭──────────────────────────────╴{##c6c2c7} \u001b[0m╶──────────────────────────────╮"
+    },
+    {
+        "type": "title",
+	"key": " ",
+        "format": "╞╡[user]╞═══════> {user-name}{##c6c2c7}@\u001b[0m{host-name}"
+    },
+    {
+        "type": "custom",
+        "format": "╰────────────────────────────────────────────────────────────────╯"
+    },
+    {
+        "type": "custom",
+        "format": "                                          "
+    },
+    {
+        "type": "custom",
+        "format": "╭──────────────────────────────╴{##c6c2c7} \u001b[0m╶──────────────────────────────╮"
+    },
+    {
+        "type": "os",           
+	"key": " ",
+        "format": "╞╡[OS]╞═════════> {##c6c2c7}{pretty-name}\u001b[0m {sysname} {arch}"
+    },
+    {
+        "type": "localip",           
+	"key": " ",
+        "format": "╞╡[IP]╞═════════> {##c6c2c7}{ipv4}\u001b[0m IPv4, {ipv6} IPv6"
+    },
+    {
+        "type": "packages",
+	"key": " ",
+        "format": "╞╡[packages]╞═══> {##c6c2c7}{all}\u001b[0m total | pacman: {pacman}, snap: {snap}, pkg:, {pkg}"
+    },
+    {
+        "type": "shell",
+	"key": " ", 
+        "format": "╞╡[shell]╞══════> {##c6c2c7}{pretty-name}\u001b[0m version {version}"
+    },
+    {
+        "type": "uptime",
+        "key": " ",
+        "format": "╞╡[uptime]╞═════> {##c6c2c7}{hours} hour(s), {minutes} minute(s)\u001b[0m"
+    },
+    {
+        "type": "wm",
+        "key": " ",
+        "format": "╞╡[WM]╞═════════> {##c6c2c7}{pretty-name}\u001b[0m version {version}"
+    },
+    {
+        "type": "terminal",
+        "key": " ",
+        "format": "╞╡[terminal]╞═══> {##c6c2c7}{pretty-name}\u001b[0m version {version}"
+    },
+    {
+        "type": "terminalfont",
+        "key": " ",
+        "format": "╞╡[font]╞═══════> {##c6c2c7}{name}\u001b[0m {size}px"
+    },
+    {
+        "type": "theme",
+        "key": " ",
+        "format": "╞╡[theme]╞══════> {##c6c2c7}{theme2}\u001b[0m"
+    },
+    {
+        "type": "custom",
+        "format": "╰────────────────────────────────────────────────────────────────╯"
+    },
+    {
+        "type": "custom",
+        "format": "                                          "
+    },
+    {
+        "type": "custom",
+        "format": "╭──────────────────────────────╴{##c6c2c7} \u001b[0m╶──────────────────────────────╮"
+    },
+    {
+        "type": "host",
+        "key": " ",
+        "format": "╞╡[host]╞═══════> {##c6c2c7}{name}\u001b[0m"
+    },
+    {
+        "type": "display",
+        "key": " ",
+        "format": "╞╡[display]╞════> {##c6c2c7}{name}\u001b[0m {width}x{height}(max {preferred-width}x{preferred-height}) {refresh-rate}Hz(max {preferred-refresh-rate}Hz)"
+    },
+    {
+        "type": "cpu",
+        "key": " ",
+        "format": "╞╡[CPU]╞════════> {##c6c2c7}{name}\u001b[0m {temperature} {cores-physical} cores"
+    },
+    {
+        "type": "gpu",
+        "key": " ",
+        "format": "╞╡[GPU]╞════════> {##c6c2c7}{name}\u001b[0m"
+    },
+    {
+
+        "type": "memory",
+        "key": " ",
+        "format": "╞╡[memory]╞═════> {##c6c2c7}{total}\u001b[0m {used}({percentage}) used"
+    },
+    {
+        "type": "swap",
+        "key": " ",
+        "format": "╞╡[swap]╞═══════> {##c6c2c7}{total}\u001b[0m {used}({percentage}) used"
+    },
+    {
+        "type": "disk",
+        "key": " ",
+        "format": "╞╡[disk]╞═══════> {##c6c2c7}{size-total}\u001b[0m({mountpoint}) {size-used}({size-percentage}) used"
+    },
+
+
+    {
+        "type": "custom",
+        "format": "╰────────────────────────────────────────────────────────────────╯"
+    },
+    {
+        "type": "custom",
+        "format": "                                          "
+    }
+
+  ]
+}
