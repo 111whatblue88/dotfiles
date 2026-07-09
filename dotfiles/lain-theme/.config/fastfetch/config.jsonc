@@ -2,13 +2,13 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
     "logo": {
         "type": "file",
-        "source": "~/.config/assets/coplandOS.txt",
+        "source": "~/.config/assets/fastfetch.txt",
         "width": 10,
         "height": 10,
         "padding": {
-            "top": 0,
+            "top": 1,
             "left": 4,
-            "right": 0
+            "right": 4
         },
         "color": {
             "1": "magenta",
