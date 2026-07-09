@@ -28,6 +28,11 @@ fi
 
 echo "$1" > "${DOTFILES_ROOT}/info/activeTheme.txt"
 
+if ![ -e ${DOTFILES_ROOT}/info ]: then
+  mkdir ${DOTFILES_ROOT}/info
+  touch ${DOTFILES_ROOT}/info/activeTheme.txt
+fi
+
 ACTIVE_THEME="$(cat ${DOTFILES_ROOT}/info/activeTheme.txt)"
 
 echo -e "\e[32m\"$ACTIVE_THEME\" chosen, starting dotfile copy\e[0m"

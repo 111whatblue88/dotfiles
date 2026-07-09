@@ -26,6 +26,11 @@ while true; do
 done
 echo "${themes[$((themeChoice-1))]##*/}" > "${DOTFILES_ROOT}/info/activeTheme.txt"
 
+if ![ -e ${DOTFILES_ROOT}/info ]: then
+  mkdir ${DOTFILES_ROOT}/info
+  touch ${DOTFILES_ROOT}/info/activeTheme.txt
+fi
+
 ACTIVE_THEME="$(cat ${DOTFILES_ROOT}/info/activeTheme.txt)"
 
 echo -e "\e[32m\"$ACTIVE_THEME\" chosen, starting dotfile copy\e[0m"
@@ -62,5 +67,7 @@ if [ $monitorYN = "y" ] || [ $monitorYN = "yes" ]; then
 fi
 
 echo -e "\e[32m\"$ACTIVE_THEME\" theme installation complete\e[0m"
+echo -e "\e[32m\note you have to run this install script twice, once with sudo and once without, because the way i wrote this is really shitty[0m"
+
 
 
