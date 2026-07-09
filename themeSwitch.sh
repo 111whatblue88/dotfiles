@@ -26,12 +26,12 @@ if [ $foundTheme = "false" ]; then
   exit
 fi
 
-echo "$1" > "${DOTFILES_ROOT}/info/activeTheme.txt"
-
-if ![ -e ${DOTFILES_ROOT}/info ]: then
+if ! [ -e ${DOTFILES_ROOT}/info ]; then
   mkdir ${DOTFILES_ROOT}/info
   touch ${DOTFILES_ROOT}/info/activeTheme.txt
 fi
+
+echo "$1" > "${DOTFILES_ROOT}/info/activeTheme.txt"
 
 ACTIVE_THEME="$(cat ${DOTFILES_ROOT}/info/activeTheme.txt)"
 
