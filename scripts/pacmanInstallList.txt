@@ -9,6 +9,8 @@ pamixer
 tmux
 zsh
 curl
+xorg
+xorg-xinit
 xorg-xrandr
 cmus
 fastfetch

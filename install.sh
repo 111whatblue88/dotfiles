@@ -68,7 +68,7 @@ if [ $monitorYN = "y" ] || [ $monitorYN = "yes" ]; then
 fi
 
 echo -e "\e[32m\"$ACTIVE_THEME\" theme installation complete\e[0m"
-echo -e "\e[32m\note you have to run this install script twice, once with sudo and once without, because the way i wrote this is really shitty[0m"
+echo -e "\e[32mnote you have to run this install script twice, once with sudo and once without, because the way i wrote this is really shitty[0m"
 
 
 
